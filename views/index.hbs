@@ -1,0 +1,36 @@
+
+<head>
+<link rel="stylesheet" 
+type="text/css" href="../cssfiles/styles.css">
+</head>
+<body>
+ <div class="container">
+        {{#if isLogin}}
+            <h1>Вход</h1>
+            <form action="/login" method="POST">
+                <label for="username">Имя пользователя:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Войти</button>
+            </form>
+            <p>Нет аккаунта? <a href="/register">Зарегистрируйтесь</a></p>
+        {{/if}}
+
+        {{#if isRegister}}
+            <h1>Регистрация</h1>
+            <form action="/register" method="POST">
+                <label for="username">Имя пользователя:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+            <p>Уже есть аккаунт? <a href="/login">Войдите</a></p>
+        {{/if}}
+    </div>
+</body>
