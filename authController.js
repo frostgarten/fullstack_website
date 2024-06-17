@@ -1,3 +1,4 @@
+const path = require('path');
 const User= require('./models/User')
 const Role= require('./models/Role')
 const bcrypt = require('bcryptjs')
@@ -32,7 +33,7 @@ class authController{
             const userRole= await Role.findOne({value:"USER"})
             const user = new User({username, password: hashPassword, roles:[userRole.value] })
             await user.save()
-            return res.json({message:"Пользователь успешно зарегестрирован"})
+            res.redirect('/');
         } catch (e){
             console.log(e)
             res.status(400).json({message:'Registration error'})
@@ -52,7 +53,7 @@ class authController{
                     return res.status(400).json({message:"Введен неверный пароль"})  
                 }
                 const token = generateAccessToken(user._id, user.roles)
-                return res.json({token})
+                res.cookie('token', token).redirect('/');
         } catch (e){
             console.log(e)
             res.status(400).json({message:'Login error'})

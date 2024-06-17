@@ -1,0 +1,62 @@
+<head>
+      
+      <link rel="stylesheet" type="text/css" href="/styles/form.css">
+        <link rel="stylesheet" type="text/css" href="/styles/menu.css">
+</head>
+
+<body>
+     {{>menu}}
+    {{>sideMenu}}
+
+    <section class="feedback-form">
+        <div class="container">
+            <h2>Обратная связь</h2>
+            <form >
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Введите ваш Email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Сообщение:</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Опишите ваш опыт взаимодействия с нашей компанией"></textarea>
+                </div>
+                <button type="submit" class="btn">Отправить</button>
+            </form>
+        </div>
+    </section>
+      <footer>
+        <div class="container">
+            <p>&copy; 2023 TechWorld. Все права защищены.</p>
+        </div>
+    </footer>
+
+   
+
+</body>
+
+<script>
+    console.log("Hello")
+let nav=document.getElementById("navigation");
+let closedNavBTN=document.getElementById("close-icon-nav");
+let burger=document.getElementById("burger");
+
+
+
+
+function toogleNav(){
+    nav.classList.toggle('open');   
+    burger.classList.toggle('open');
+   }
+   
+function closeNav(){
+ nav.classList.remove('open');  
+ burger.classList.remove('open');  
+}
+
+burger.addEventListener('click',toogleNav);
+closedNavBTN.addEventListener('click',closeNav);
+</script>

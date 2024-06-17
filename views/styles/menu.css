@@ -1,0 +1,132 @@
+.burger{
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 33px;
+    height: 19.19px;
+    overflow: hidden;
+    z-index: 5;
+
+
+    
+}
+
+.burger-content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+.burger-line{
+    width: 100%;
+    height: 3.84px;
+    background-color: #070707;
+    position: absolute;
+    top:calc(3.84px * 2);
+    left: 0px;
+    transition: all 0.3s ease-out;
+
+}
+
+.burger-content::before{ 
+    content: '';
+    width: 100%;
+    height: 3.84px;
+    background-color: #070707;
+    position: absolute;
+    top:0px;
+    left: 0px;
+    transition: all 0.3s ease-out;
+}
+
+.burger-content::after{ 
+    content: '';
+    width: 100%;
+    height: 3.84px;
+    background-color: #070707;
+    position: absolute;
+    top:calc(3.84px * 4);
+    left: 0px;
+    transition: all 0.2s ease-out;
+}
+
+
+
+.burger.open .burger-line{
+    
+        transform: rotate(30deg);
+
+}
+
+.burger.open .burger-content::before{ 
+
+
+    transform: rotate(-30deg);
+    top:calc(3.84px * 2);
+    
+    }
+
+.burger.open .burger-content::after{ 
+    
+    left: 100%;
+
+}
+
+.navigation{
+
+    width: 0%;
+    padding: 0px;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #FFF;
+    z-index: 999;
+    font-size: 40px;
+    color: #070707;
+    word-break:keep keep-all ;
+    white-space: nowrap;
+    transition: width 0.5s linear, padding 0s linear;
+    transition-delay: 0S, 0.49S;
+    
+    
+    }
+
+.navigation.open{
+    width: 35%;
+    padding: 66px 28px 57px 26px;
+    transition-delay: 0s, 0s;
+    font-size: 40px;
+    color: #070707;
+    position: fixed;
+    
+}
+
+.navigation-content{
+width: 100%;
+height: auto;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+position: relative;
+
+
+}
+.navigation a{
+    word-break: break-all;
+}
+.close-icon-nav{
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 33px;
+    height: 19.19px;
+}
+
+.navigation a:hover{
+    font-size: 42px;
+    
+}
